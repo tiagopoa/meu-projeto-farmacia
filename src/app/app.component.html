@@ -1,0 +1,54 @@
+<!--The content below is only a placeholder and can be replaced.-->
+  <h1>
+    {{titulo}}
+  </h1>  
+
+  <!--<div class="btn-group-vertical">
+ <ul>
+    <button routerLink="/listaProdutos">Produtos</button>
+    <button routerLink="/novoProduto">Novo Produto</button>
+    <button routerLink="/listaUsuarios">Usuários</button>
+    <button routerLink="/novoUsuario">Novo Usuário</button>
+    <button routerLink="/listaClientes">Clientes</button>
+    <button routerLink="/novoCliente">Novo Cliente</button>
+  </ul>
+  </div>-->
+
+    <ul class="nav nav-pills">
+       
+    <li class="dropdown" dropdown> <!-- {1} -->
+        <a dropdownToggle role="button"> <!-- {2} -->
+          Menu <span class="caret"></span></a>
+        <ul *dropdownMenu class="dropdown-menu"> <!-- {3} -->
+            <li class="dropdown-item" href="#"><a routerLink="/listaProdutos">Lista Produtos</a></li>
+            <li class="dropdown-item" href="#"><a routerLink="/novoProduto">Novo Produto</a></li>
+            <li class="dropdown-item" href="#"><a routerLink="/listaUsuarios">Lista Usuários</a></li>
+            <li class="dropdown-item" href="#"><a routerLink="/novoUsuario">Novo Usuário</a></li>
+            <li class="dropdown-item" href="#"><a routerLink="/listaClientes">Lista Clientes</a></li>
+            <li class="dropdown-item" href="#"><a routerLink="/novoCliente">Novo Cliente</a></li>
+        </ul>
+    </li>
+    </ul>
+
+    <!--<ul class="nav nav-pills">
+      <li class="dropdown" dropdown>
+      
+        <a dropdownToggle role="button" aria-haspopup="true" aria-expanded="false">Dropdown<span class="caret"></span></a>
+        <ul *dropdownMenu class="dropdown-menu">
+          <li class="dropdown-item" href="#">Action</li>
+          <li class="dropdown-item" href="#">Another action</li>
+          <li class="dropdown-item" href="#">Something else here</li>          
+          </ul>
+        
+      </li>
+      
+    </ul>-->
+
+  
+  <router-outlet></router-outlet>
+
+<!--<app-tabela-produtos></app-tabela-produtos>
+<app-form-produtos></app-form-produtos>-->
+
+
+  

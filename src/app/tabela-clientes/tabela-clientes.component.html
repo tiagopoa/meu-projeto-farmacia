@@ -1,0 +1,18 @@
+<h3>{{titulo}}</h3>
+<table class="table">
+    <thead class="thead-light">
+  <tr>
+    <th scope="col">Codigo</th><th scope="col">Nome</th><th scope="col">CPF</th><th scope="col">E-mail</th><th scope="col">endereço</th><th scope="col">Telefone</th><th scope="col">Editar</th><th scope="col">Remover</th>
+  </tr>
+  <tr *ngFor='let cliente of clientes'>
+    <th scope="row">{{cliente.codigo}}</th>
+    <td>{{cliente.nome}}</td>
+    <td>{{cliente.cpf}}</td>
+    <td>{{cliente.email}}</td>
+    <td>{{cliente.endereco}}</td>
+    <td>{{cliente.telefone}}</td>
+    <td><a [routerLink]="['/edicaoCliente', cliente.codigo]">Editar</a></td>
+    <td><a routerLink='/listaClientes' (click)="remover(cliente.codigo)">Remover</a></td>
+  </tr></thead>
+</table>
+<a routerLink="/novoCliente">Novo Cliente</a>

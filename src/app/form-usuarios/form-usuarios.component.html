@@ -1,0 +1,28 @@
+<h3>{{titulo}}</h3>
+<div class="form">
+  <form> 
+    
+    <label for="nome">Nome</label><p>
+    <input type="text" id="nome" name="nome" placeholder="Nome.." [(ngModel)]="usuario.nome">
+    
+    <label for="preco">Login</label><p>
+    <input type="text" id="login" name="login" placeholder="Login.." [(ngModel)]="usuario.login">
+
+        <label for="cpf">CPF</label><p>
+    <input type="text" id="cpf" name="cpf" placeholder="CPF.." [(ngModel)]="usuario.cpf">
+
+        <label for="email">E-mail</label><p>
+    <input type="text" id="email" name="email" placeholder="E-mail.." [(ngModel)]="usuario.email">
+
+        <label for="senha">Senha</label><p>
+    <input type="text" id="senha" name="senha" placeholder="Senha.." [(ngModel)]="usuario.senha">
+
+            <label for="telefone">Telefone</label><p>
+    <input type="text" id="telefone" name="telefone" placeholder="Telefone.." [(ngModel)]="usuario.telefone">
+
+    <div class="buttons">
+      <input type="button" (click)="salvarUsuario()" value="Salvar">
+      <input type="button" (click)="cancelar()" value="Cancelar">
+    </div>
+  </form>
+</div>
