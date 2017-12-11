@@ -21,21 +21,21 @@ export class FormProdutosComponent implements OnInit {
 
     if(isNaN(this.codigo)){
       this.produto= new Produtos();
-    }/* else {
+    } else {
       
         this.servico.getProdutoPorCodigo(this.codigo).subscribe(
           data => { this.produto = data; },
           erro => { console.log('ERROR', erro); }
         );
       
-    }*/
+    }
 
-    if(!isNaN(this.codigo)) {
+    /*if(!isNaN(this.codigo)) {
       this.servico.getProdutoPorCodigo(this.codigo).subscribe(
         data => { this.produto = data; },
         erro => { console.log('ERROR', erro); }
       );
-    }
+    }*/
 
 }
 

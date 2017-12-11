@@ -9,16 +9,25 @@ import { CrudUsuariosService } from "../crud-usuarios.service";
 })
 export class TabelaUsuariosComponent implements OnInit {
 	titulo = "Usuários"
-	usuarios: Usuarios[]=[];
+  usuarios: Usuarios[]=[];
+  erro:String;
 
   constructor(private servico:CrudUsuariosService) { }
 
   ngOnInit() {
-  	this.usuarios = this.servico.getUsuarios();
+    //this.usuarios = this.servico.getUsuarios();
+    this.servico.getUsuarios().subscribe(
+      data => { this.usuarios = data; },
+      error => { console.log(error); }
+    );
   }
 
-  remover(usuario:Usuarios){
-  	this.servico.removerUsuario(usuario);
+  remover(codigo:number){
+    //this.servico.removerUsuario(usuario);
+    this.servico.removerUsuario(codigo).subscribe(
+      data => this.usuarios = data,
+      error => this.erro = error
+    );
   }
 
 }

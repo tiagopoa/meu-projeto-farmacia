@@ -20,18 +20,30 @@ export class FormUsuariosComponent implements OnInit {
     if(isNaN(this.codigo)){
       this.usuario= new Usuarios();
     } else {
-      this.usuario = Object.assign({},
-        this.servico.getUsuarioPorCodigo(this.codigo));
+      //this.usuario = Object.assign({},
+        //this.servico.getUsuarioPorCodigo(this.codigo));
+        this.servico.getUsuarioPorCodigo(this.codigo).subscribe(
+          data => { this.usuario = data; },
+          erro => { console.log('ERROR', erro); }
+        );
     }
 
    }
 
      salvarUsuario(){
     if(isNaN(this.codigo)){
-      this.servico.adicionarUsuario(this.usuario);
-      this.usuario = new Usuarios();
+      //this.servico.adicionarUsuario(this.usuario);
+      //this.usuario = new Usuarios();
+      this.servico.adicionarUsuario(this.usuario).subscribe(
+        data => { this.cancelar(); },
+        erro => { console.log(erro); }
+      );
     } else {
-      this.servico.atualizaUsuario(this.codigo, this.usuario);
+      //this.servico.atualizaUsuario(this.codigo, this.usuario);
+      this.servico.atualizaUsuario(this.codigo, this.usuario).subscribe(
+        data => {
+         console.log(data)}); 
+         this.router.navigate(['/listaUsuarios']);
     }
       this.router.navigate(['/listaUsuarios']);
     }

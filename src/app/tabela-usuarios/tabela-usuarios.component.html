@@ -13,7 +13,7 @@
     <td>{{usuario.senha}}</td>
     <td>{{usuario.telefone}}</td>
     <td><a [routerLink]="['/edicaoUsuario', usuario.codigo]">Editar</a></td>
-    <td><a routerLink="/listaUsuarios" (click)="remover(usuario)">Remover</a></td>
+    <td><a routerLink="/listaUsuarios" (click)="remover(usuario.codigo)">Remover</a></td>
   </tr></thead>
 </table>
 <a routerLink="/novoUsuario">Novo usuário</a>
