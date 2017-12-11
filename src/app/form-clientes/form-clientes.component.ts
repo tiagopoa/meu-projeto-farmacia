@@ -38,7 +38,7 @@ export class FormClientesComponent implements OnInit {
     
     if(isNaN(this.codigo)){
       this.servico.adicionarCliente(this.cliente).subscribe(
-      data => { this.cancelar(); },
+      data => { this.cancelar(); window.location.reload();},
       erro => { console.log(erro); }
     );
       //this.servico.adicionarCliente(this.cliente);
@@ -46,12 +46,14 @@ export class FormClientesComponent implements OnInit {
       this.router.navigate(['/listaClientes']);
     } else {
       this.servico.atualizaCliente(this.codigo, this.cliente).subscribe(
-         data => {
-          console.log(data)}); 
+        cliente => window.location.reload(),
+        erro =>  console.log(erro))
+         //data => { window.location.reload() }, 
+         //cliente => {  window.location.reload(); } )
           this.router.navigate(['/listaClientes']);
       
     }
-      this.router.navigate(['/listaClientes']);
+      //this.router.navigate(['/listaClientes']);
 
 
 //    this.servico.adicionarProduto(this.produto);

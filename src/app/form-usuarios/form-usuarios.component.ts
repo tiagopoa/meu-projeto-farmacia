@@ -24,6 +24,7 @@ export class FormUsuariosComponent implements OnInit {
         //this.servico.getUsuarioPorCodigo(this.codigo));
         this.servico.getUsuarioPorCodigo(this.codigo).subscribe(
           data => { this.usuario = data; },
+          //data => window.location.reload(),
           erro => { console.log('ERROR', erro); }
         );
     }
@@ -35,14 +36,13 @@ export class FormUsuariosComponent implements OnInit {
       //this.servico.adicionarUsuario(this.usuario);
       //this.usuario = new Usuarios();
       this.servico.adicionarUsuario(this.usuario).subscribe(
-        data => { this.cancelar(); },
+        data => { this.cancelar();  window.location.reload();},
         erro => { console.log(erro); }
       );
     } else {
       //this.servico.atualizaUsuario(this.codigo, this.usuario);
       this.servico.atualizaUsuario(this.codigo, this.usuario).subscribe(
-        data => {
-         console.log(data)}); 
+        data => {console.log(data); window.location.reload()}); 
          this.router.navigate(['/listaUsuarios']);
     }
       this.router.navigate(['/listaUsuarios']);

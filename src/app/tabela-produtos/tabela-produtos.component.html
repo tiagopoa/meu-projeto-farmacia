@@ -9,7 +9,7 @@
     <td>{{produto.nome}}</td>
     <td>{{produto.preco}}</td>
     <td><a [routerLink]="['/edicaoProduto', produto.codigo]">Editar</a></td>
-    <td><a routerLink="/listaProdutos" (click)="remover(produto)">Remover</a></td>
+    <td><a routerLink="/listaProdutos" (click)="remover(produto.codigo)">Remover</a></td>
   </tr></thead>
 </table>
 <a routerLink="/novoProduto">Novo produto</a>

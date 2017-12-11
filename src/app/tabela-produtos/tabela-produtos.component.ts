@@ -23,12 +23,12 @@ export class TabelaProdutosComponent implements OnInit {
     );
   }
 
-  remover(codigo:number){
-    //this.servico.removerProduto(produto);
+  remover(codigo:number){  
     this.servico.removerProduto(codigo).subscribe(
-      data => this.produtos = data,
+      data => { this.produtos = data; window.location.reload()},
       error => this.erro = error
     );
+    this.router.navigate(['/listaProdutos']);
   }
 
 }

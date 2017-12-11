@@ -44,7 +44,7 @@ export class FormProdutosComponent implements OnInit {
       //this.servico.adicionarProduto(this.produto);
       //this.produto = new Produtos();
       this.servico.adicionarProduto(this.produto).subscribe(
-        data => { this.cancelar(); },
+        data => { this.cancelar(); window.location.reload();},
         erro => { console.log(erro); }
       );
         //this.servico.adicionarCliente(this.cliente);
@@ -53,8 +53,7 @@ export class FormProdutosComponent implements OnInit {
     } else {
       //this.servico.atualizaProduto(this.codigo, this.produto);
       this.servico.atualizaProduto(this.codigo, this.produto).subscribe(
-        data => {
-         console.log(data)}); 
+        data => { console.log(data); window.location.reload()}); 
          this.router.navigate(['/listaProdutos']);
     }
       this.router.navigate(['/listaProdutos']);
