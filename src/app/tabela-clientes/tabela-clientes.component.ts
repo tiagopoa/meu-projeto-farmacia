@@ -31,10 +31,10 @@ export class TabelaClientesComponent implements OnInit {
 
   remover(codigo:number){
     this.servico.removerCliente(codigo).subscribe(
-      data => { this.clientes = data; window.location.reload()},
+      data => { this.clientes = data; this.router.navigate(['/listaClientes']);},
       error => this.erro = error
     );
-    this.router.navigate(['/listaClientes']);
+    //this.router.navigate(['/listaClientes']);
 
     }
 
